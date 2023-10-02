@@ -6,3 +6,12 @@
 
 * Задание: необходимо продемонстрировать изоляцию одного и того же приложения (как решено на семинаре - командного 
   интерпретатора) в различных пространствах имен.
+
+Создаем папку containerOne, переходим в нее и копируем туда bash из корня
+
+* mkdir containerOne
+* cd containerOne/
+* mkdir bin
+* cd bin/
+* cp /bin/bash ~/containerOne/bin/
+![Снимок экрана от 2023-10-02 20-19-18](https://github.com/ZagAlex1/ContainerSeminars/assets/93830341/3261147a-efbc-49a2-b31b-e7d6426aaa3a)
