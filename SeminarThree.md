@@ -57,6 +57,33 @@
 
 ![Снимок экрана от 2023-10-08 20-19-28](https://github.com/ZagAlex1/ContainerSeminars/assets/93830341/b277b0d5-4046-4084-95e3-3cdc139a7f25)
 
+* docker stop gb-test
+* docker start gb-test
+* docker exec -it gb-test bash
+
+Настройка двусторонней связи между контейнером и папкой хостовой системы
+
+* sudo mkdir /test
+* sudo mkdir /test/folder
+* docker run -it -h GB --name gb-test-2 -v /test/folder:/otherway ubuntu:22.10
+* cd otherway/
+* touch passwords.txt
+* echo "123test" >> passwords.txt
+
+![Снимок экрана от 2023-10-08 20-48-11](https://github.com/ZagAlex1/ContainerSeminars/assets/93830341/68be1c7f-4e28-41fb-ad8e-05018c55ea89)
+
+* exit
+* cat /test/folder/passwords.txt
+* sudo su
+* sudo echo "main system" >> passwords.txt
+
+![Снимок экрана от 2023-10-08 20-59-37](https://github.com/ZagAlex1/ContainerSeminars/assets/93830341/eea71c46-3241-4789-bf3d-95d165ef1328)
+
+* docker start gb-test-2
+* docker exec -it gb-test-2 bash
+* cat otherway/passwords.txt
+
+![Снимок экрана от 2023-10-08 21-06-13](https://github.com/ZagAlex1/ContainerSeminars/assets/93830341/f8011cdc-1c30-459d-8be3-664dadec4942)
 
 
 
